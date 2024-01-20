@@ -36,7 +36,7 @@ function summElementsWorker(...arr) {
 		sum += arr[i];
 	}
 	return sum;
-	};
+}
 
 
 // summElementsWorker
