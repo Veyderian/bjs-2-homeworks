@@ -17,17 +17,32 @@ console.log(compareArrays([8, 1, 2], [8, 1, 2])) // true
 
 function getUsersNamesInAgeRange(users, gender) {
 
-	const filteredUsers = users.filter(users => users.gender === gender);
+	
+	let result = users.filter(user => user.gender === gender).map(user => user.age).reduce((acc, age, index, arr) => acc + age/arr.length, 0);
+  
+        
+  // const filteredUsers = users.filter(users => users.gender === gender);
+  
+   
 
-	if (filteredUsers.length === 0) {
-		return 0;
-	}
-
-	const ages = filteredUsers.map(users => users.age);
-	const sum = ages.reduce((acc, age) => acc + age, 0);
-	const averagetAge = sum / ages.length;
-	return averagetAge;
+    
+if (result.length === 0){
+  return 0;
+} 
+  return result;
 }
+
+	//const filteredUsers = users.filter(users => users.gender === gender);
+
+	//if (filteredUsers.length === 0) {
+	//	return 0;
+	//}
+
+	//const ages = filteredUsers.map(users => users.age);
+	//const sum = ages.reduce((acc, age) => acc + age, 0);
+	//const averagetAge = sum / ages.length;
+	//return averagetAge;
+//}
 const people = [{
 		firstName: "Александр",
 		secondName: "Карпов",
